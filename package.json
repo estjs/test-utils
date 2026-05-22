@@ -1,0 +1,92 @@
+{
+  "name": "@estjs/test-utils",
+  "version": "0.0.1",
+  "description": "Testing utilities for Essor components — wrapper API, semantic queries, user-event, all on top of @testing-library/dom.",
+  "type": "module",
+  "keywords": [
+    "essor",
+    "test",
+    "testing",
+    "test-utils",
+    "testing-library",
+    "user-event",
+    "dom-testing"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/estjs/essor",
+  "bugs": "https://github.com/estjs/essor/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estjs/essor.git",
+    "directory": "packages/test-utils"
+  },
+  "author": "jiangxd <jiangxd2016@gmail.com>",
+  "funding": "https://github.com/sponsors/estjs",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "README_CN.md",
+    "dist"
+  ],
+  "main": "./dist/test-utils.cjs.js",
+  "module": "./dist/test-utils.esm.js",
+  "types": "./dist/test-utils.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/test-utils.d.ts",
+      "require": "./dist/test-utils.cjs.js",
+      "import": "./dist/test-utils.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/test-utils.d.ts"
+      ]
+    }
+  },
+  "sideEffects": [
+    "./dist/test-utils.esm.js",
+    "./dist/test-utils.cjs.js",
+    "./src/index.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint --cache \"./src/**/*.{ts,tsx,js}\" \"./test/**/*.{ts,tsx,js}\" \"./examples/**/*.{ts,tsx,js}\"",
+    "lint:fix": "pnpm run lint --fix",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build",
+    "prepublishOnly": "pnpm run verify",
+    "release": "pnpm publish --access public --no-git-checks"
+  },
+  "peerDependencies": {
+    "essor": "*"
+  },
+  "dependencies": {
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/user-event": "^14.6.1"
+  },
+  "devDependencies": {
+    "@estjs/eslint-config": "^2.3.0",
+    "@vitest/coverage-v8": "^4.1.6",
+    "bumpp": "^11.1.0",
+    "eslint": "^10.4.0",
+    "essor": "link:../essor/packages/core",
+    "jsdom": "^29.1.1",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.6"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
