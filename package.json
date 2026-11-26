@@ -78,7 +78,7 @@
   "devDependencies": {
     "@estjs/eslint-config": "^2.3.0",
     "@vitest/coverage-v8": "^4.1.6",
-    "bumpp": "^11.1.0",
+    "bumpp": "^12.0.0",
     "eslint": "^10.4.0",
     "essor": "link:../essor/packages/core",
     "jsdom": "^29.1.1",
